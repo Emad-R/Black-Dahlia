@@ -1,5 +1,10 @@
-let cart = [];
-let quantities = {};
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+let quantities = JSON.parse(localStorage.getItem('quantities')) || {};
+
+function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem('quantities', JSON.stringify(quantities));
+}
 
 function addToCart(product, price) {
     const quantity = quantities[product] || 1;
@@ -9,6 +14,7 @@ function addToCart(product, price) {
     } else {
         cart.push({ product, price, quantity });
     }
+    saveCart();
     alert(`${quantity} ${product}(s) added to cart!`);
 }
 
@@ -17,6 +23,7 @@ function increaseQuantity(product) {
     if (quantities[product] < 10) {
         quantities[product]++;
         document.getElementById(`qty-${product}`).innerText = quantities[product];
+        saveCart();
     }
 }
 
@@ -24,6 +31,7 @@ function decreaseQuantity(product) {
     if (quantities[product] > 1) {
         quantities[product]--;
         document.getElementById(`qty-${product}`).innerText = quantities[product];
+        saveCart();
     }
 }
 
@@ -38,7 +46,18 @@ function toggleCart() {
 
 function clearCart() {
     cart = [];
+    quantities = {};
+    saveCart();
     alert('Cart has been cleared!');
     document.getElementById('cart-items').innerHTML = 'Cart is empty';
+    const quantitySpans = document.querySelectorAll('[id^="qty-"]');
+    quantitySpans.forEach(span => span.innerText = '1');
 }
 
+// Restore quantity spans on load
+window.onload = () => {
+    for (let product in quantities) {
+        const span = document.getElementById(`qty-${product}`);
+        if (span) span.innerText = quantities[product];
+    }
+};
