@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign In - Noir Blooms</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+  <div class="logo">
+    <img src="flower_transparent.png" alt="Noir Blooms Logo">
+    <h1>Noir Blooms</h1>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li id="auth-link"><a href="sign_in.html">Sign In</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="form-page">
+  <h1 class="section-title">Sign In</h1>
+
+  <form id="signin-form" class="form-box">
+    <input type="text" id="signin-username" placeholder="Username" required>
+    <input type="password" id="signin-password" placeholder="Password" required>
+    <button type="submit" class="btn">Sign In</button>
+    <p>Don't have an account? <a href="sign_up.html">Sign Up</a></p>
+  </form>
+</main>
+
+<script src="main.js"></script>
+<script>
+document.getElementById('signin-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const username = document.getElementById('signin-username').value;
+  const password = document.getElementById('signin-password').value;
+  const storedUser = JSON.parse(localStorage.getItem('user'));
+
+  if (storedUser && storedUser.username === username && storedUser.password === password) {
+    storedUser.loggedIn = true;
+    localStorage.setItem('user', JSON.stringify(storedUser));
+    alert('Welcome back, ' + username + '!');
+    window.location.href = 'products.html';
+  } else {
+    alert('Incorrect username or password.');
+  }
+});
+</script>
+</body>
+</html>

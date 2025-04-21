@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cart - Noir Blooms</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header>
+  <div class="logo">
+    <img src="flower_transparent.png" alt="Noir Blooms Logo">
+    <h1>Noir Blooms</h1>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li><a href="sign_in.html">Sign In</a></li> 
+    </ul>
+  </nav>
+</header>
+
+<main class="cart-page">
+  <h1 class="section-title">Your Cart</h1>
+
+  <section id="cart-items" class="cart-items">
+    <!-- Cart items load here -->
+  </section>
+
+  <button class="btn" onclick="clearCart()">Clear Cart</button>
+</main>
+
+<script src="main.js"></script>
+<script>
+  displayCart();
+</script>
+</body>
+</html>

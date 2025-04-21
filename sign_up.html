@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign Up - Noir Blooms</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header>
+  <div class="logo">
+    <img src="flower_transparent.png" alt="Noir Blooms Logo">
+    <h1>Noir Blooms</h1>
+  </div>
+</header>
+
+<main class="form-page">
+  <h1 class="section-title">Sign Up</h1>
+
+  <form id="signup-form" class="form-box">
+    <input type="text" id="signup-username" placeholder="Username" required>
+    <input type="password" id="signup-password" placeholder="Password" required>
+    <input type="password" id="signup-confirm" placeholder="Confirm Password" required>
+    <button type="submit" class="btn">Sign Up</button>
+    <p>Already have an account? <a href="sign_in.html">Sign In</a></p> 
+  </form>
+</main>
+
+<script src="main.js"></script>
+<script>
+document.getElementById('signup-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const username = document.getElementById('signup-username').value;
+  const password = document.getElementById('signup-password').value;
+  const confirm = document.getElementById('signup-confirm').value;
+
+  if (password !== confirm) {
+    alert('Passwords do not match.');
+    return;
+  }
+
+  const user = { username, password };
+  localStorage.setItem('user', JSON.stringify(user));
+  alert('Account created successfully! Please sign in.');
+  window.location.href = 'sign_in.html';
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop - Noir Blooms</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+  <div class="logo">
+    <img src="flower_transparent.png" alt="Noir Blooms Logo">
+    <h1>Noir Blooms</h1>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li id="auth-link"><a href="sign_in.html">Sign In</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="shop-hero">
+  <div class="hero-content">
+    <h1>Shop Noir Blooms</h1>
+    <p>Discover gothic treasures crafted for the bold and beautiful.</p>
+    <a href="#categories" class="btn">Explore Now</a>
+  </div>
+</section>
+
+<main id="categories" class="shop-page">
+
+  <section class="category-section">
+    <h2>Apparel</h2>
+    <div class="product-grid">
+      <div class="product-card" onclick="addToCart('Black Dahlia Embroidered Hoodie')">Embroidered Hoodie</div>
+      <div class="product-card" onclick="addToCart('Black Dahlia Silk Scarf')">Silk Scarf</div>
+      <div class="product-card" onclick="addToCart('Black Dahlia Graphic T-Shirt')">Graphic T-Shirt</div>
+      <div class="product-card" onclick="addToCart('Black Dahlia Emblem Jacket')">Emblem Jacket</div>
+      <div class="product-card" onclick="addToCart('Black Dahlia Baseball Cap')">Baseball Cap</div>
+      <div class="product-card" onclick="addToCart('Black Dahlia Printed Socks')">Printed Socks</div>
+    </div>
+  </section>
+
+  <section class="category-section">
+    <h2>Home Décor & Art</h2>
+    <div class="product-grid">
+      <div class="product-card" onclick="addToCart('Black Dahlia Canvas Wall Art')">Canvas Wall Art</div>
+      <div class="product-card" onclick="addToCart('Black Dahlia Scented Candles')">Scented Candles</div>
+      <div class="product-card" onclick="addToCart('Black Dahlia Printed Pillows')">Printed Pillows</div>
+      <div class="product-card" onclick="addToCart('Black Dahlia Car Decal')">Car Decal</div>
+      <div class="product-card" onclick="addToCart('Black Dahlia Table Runner')">Table Runner</div>
+      <div class="product-card" onclick="addToCart('Black Dahlia Vase')">Vase</div>
+    </div>
+  </section>
+
+  <section class="category-section">
+    <h2>Beauty & Self-Care</h2>
+    <div class="product-grid">
+      <div class="product-card" onclick="addToCart('Black Dahlia Perfume/Cologne')">Perfume/Cologne</div>
+      <div class="product-card" onclick="addToCart('Black Dahlia Essential Oil Blend')">Essential Oil Blend</div>
+      <div class="product-card" onclick="addToCart('Black Dahlia Handmade Soap')">Handmade Soap</div>
+      <div class="product-card" onclick="addToCart('Black Dahlia Bath Bomb')">Bath Bomb</div>
+      <div class="product-card" onclick="addToCart('Black Dahlia Face Mask')">Face Mask</div>
+      <div class="product-card" onclick="addToCart('Black Dahlia Lip Balm')">Lip Balm</div>
+    </div>
+  </section>
+
+  <section class="category-section">
+    <h2>Stationery & Gifts</h2>
+    <div class="product-grid">
+      <div class="product-card" onclick="addToCart('Black Dahlia Hardcover Journal')">Hardcover Journal</div>
+      <div class="product-card" onclick="addToCart('Black Dahlia Wax Seal Stamp')">Wax Seal Stamp</div>
+      <div class="product-card" onclick="addToCart('Black Dahlia Greeting Card Set')">Greeting Card Set</div>
+      <div class="product-card" onclick="addToCart('Black Dahlia Sticker Pack')">Sticker Pack</div>
+      <div class="product-card" onclick="addToCart('Black Dahlia Bookmarks')">Bookmarks</div>
+      <div class="product-card" onclick="addToCart('Black Dahlia Tote Bag')">Tote Bag</div>
+    </div>
+  </section>
+
+  <section class="category-section">
+    <h2>Jewelry & Accessories</h2>
+    <div class="product-grid">
+      <div class="product-card" onclick="addToCart('Black Dahlia Sterling Silver Necklace')">Sterling Silver Necklace</div>
+      <div class="product-card" onclick="addToCart('Black Dahlia Charm Bracelet')">Charm Bracelet</div>
+      <div class="product-card" onclick="addToCart('Black Dahlia Earrings')">Earrings</div>
+      <div class="product-card" onclick="addToCart('Black Dahlia Brooch')">Brooch</div>
+      <div class="product-card" onclick="addToCart('Black Dahlia Hair Clip Set')">Hair Clip Set</div>
+      <div class="product-card" onclick="addToCart('Black Dahlia Enamel Pin')">Enamel Pin</div>
+    </div>
+  </section>
+
+</main>
+
+<script src="main.js"></script>
+</body>
+</html>
