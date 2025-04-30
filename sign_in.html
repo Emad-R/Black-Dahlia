@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign In - Noir Blooms</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <img src="https://cyan.csam.montclair.edu/~salemm1/Project/photos/logo-white.png" alt="Noir Blooms Logo" />
+    <h1>Noir Blooms</h1>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="products.php">Shop</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="cart.php">Cart</a></li>
+      <li><a href="sign_in.html">Sign In</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="form-page">
+  <h1 class="section-title">Sign In</h1>
+
+  <form action="sign_in.php" method="POST" class="form-box">
+    <input type="email" name="email" placeholder="Email" required />
+    <input type="password" name="password" placeholder="Password" required />
+
+    <select name="role" required>
+      <option value="">-- Select Role --</option>
+      <option value="customer">Customer</option>
+      <option value="employee">Employee</option>
+      <option value="manager">Manager</option>
+    </select>
+
+    <button type="submit" class="btn">Sign In</button>
+    <p>Don't have an account? <a href="sign_up.html">Sign Up</a></p>
+  </form>
+</main>
+
+</body>
+</html>
+
+
