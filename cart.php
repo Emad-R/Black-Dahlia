@@ -161,7 +161,7 @@ $conn->close();
 
 <header>
   <div class="logo">
-    <img src="flower_transparent.png" alt="Noir Blooms Logo" />
+    <img src="../images/flower_transparent.png" alt="Noir Blooms Logo" />
     <h1>Noir Blooms</h1>
   </div>
   <nav>
