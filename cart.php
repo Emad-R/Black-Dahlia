@@ -97,7 +97,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['checkout'])) {
             $stmt->execute();
             $stmt->close();
         }
-
+        
+        // Reduce stock after inserting the item
+        $updateStockStmt = $conn->prepare("
+            UPDATE products 
+            SET available_stock = available_stock - ? 
+            WHERE product_id = ? AND available_stock >= ?
+        ");
+        
+        foreach ($order_items as $item) {
+            $updateStockStmt->bind_param("iii", $item['quantity'], $item['product_id'], $item['quantity']);
+            $updateStockStmt->execute();
+        }
+        $updateStockStmt->close();
+        
         // Clear the cart
         $stmt = $conn->prepare("DELETE FROM cart_items WHERE customer_id = ?");
         $stmt->bind_param("i", $customer_id);
